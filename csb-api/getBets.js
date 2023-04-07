@@ -1,7 +1,8 @@
+let env='stage1-api.dragonbet.co.uk'
 function getBetsAPI(fixture_id){
     cy.request({
         method : 'GET',
-        url : `https://'+env+'/api/v3/fixture/${fixture_id}`
+        url : `https://'+${env}+'/api/v3/fixture/${fixture_id}`
     }).then((res)=>{
         expect(res.status).to.eq(200)
         let fixture_id_api = res.body.data.id;
