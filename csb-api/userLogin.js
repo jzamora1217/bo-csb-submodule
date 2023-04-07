@@ -1,4 +1,5 @@
 let user_id,token;
+let env='stage1-api.dragonbet.co.uk'
 
 function loginAPI(email, password){
     cy.request({
@@ -10,6 +11,7 @@ function loginAPI(email, password){
         }
     }).then((res)=>{
         expect(res.status).to.eq(200)
+        cy.log('****inside module')
         user_id = res.body.data.user_id;
         token = res.body.data.token;
         cy.wrap(token).as('token')
