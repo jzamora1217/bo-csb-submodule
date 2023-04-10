@@ -1,5 +1,5 @@
 let user_id,token;
-let env='stage1-api.dragonbet.co.uk'
+let env='stage2-api.dragonbet.co.uk'
 
 function loginAPI(email, password){
     cy.request({

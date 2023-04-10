@@ -1,4 +1,4 @@
-let env='stage1-api.dragonbet.co.uk'
+let env='stage2-api.dragonbet.co.uk'
 
 function getBetsAPI(fixture_id){
     return cy.request({
