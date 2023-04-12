@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 const utils = require('../support/utils');
-let user_id;
 
+let env='stage1-api.dragonbet.co.uk'
 function createUserAPI(timestamp){
     let firstName = faker.name.firstName();
     let lastName = faker.name.lastName();
@@ -12,7 +12,13 @@ function createUserAPI(timestamp){
     let phoneNumber = "+44123" + Math.floor(Math.random() * 10000000)
     cy.wrap(firstName).as('firstName')
     cy.wrap(lastName).as('lastName')
-    cy.request({
+    day = day.toString();
+    month = month.toString();
+    day = day.length > 2 ? day : day.padStart(2, "0");
+    month = month.length > 2 ? month : month.padStart(2, "0");
+    let dob = month+'/'+day+'/'+year;
+    cy.wrap(dob).as('dob')
+    return cy.request({
         method: 'POST',
         url: 'https://' + env + '/api/v3/user/register',
         body: {
@@ -35,24 +41,17 @@ function createUserAPI(timestamp){
             "city": "London",
             "country": "GB",
             "post_code": "WC2E 8JY",
-            'currency': userAccountInfo.currency,
+            'currency': "GBP",
             "agreedTnC": true,
             "signup_code": ""
         },
-    }).then((res) => {
-        expect(res.status).to.eq(200);
-        user_id = res.body.data.user_id;
+    }).then((resp) => {
+        expect(resp.status).to.eq(200);
+        return resp.body;
     });
-    day = day.toString();
-    month = month.toString();
-    day = day.length > 2 ? day : day.padStart(2, "0");
-    month = month.length > 2 ? month : month.padStart(2, "0");
-    let dob = month+'/'+day+'/'+year;
-    cy.wrap(dob).as('dob')
-}
 
+}
 
 module.exports = {
     createUserAPI,
-
 };
