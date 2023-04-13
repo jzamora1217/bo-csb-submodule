@@ -20,5 +20,5 @@ function loginAPIBO(email, password){
 }
 
 module.exports = {
-    loginAPI,
+    loginAPIBO,
 };
