@@ -1,6 +1,6 @@
 let env='stage1-backoffice-api.askottentertainment.com'
 
-function loginAPI(email, password){
+function loginAPIBO(email, password){
     cy.request({
         method : 'POST',
         url: 'https://'+env+'/api/v1/auth/get-token/',
