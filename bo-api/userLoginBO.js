@@ -15,7 +15,7 @@ function loginAPIBO(email, password){
         }
     }).then((res)=>{
         expect(res.status).to.eq(200)
-        cy.wrap(res.body.data.token).as('token')
+        cy.wrap(res.body.data.token).as('BOToken')
     })
 }
 
