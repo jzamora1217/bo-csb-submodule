@@ -1,7 +1,7 @@
 let env='stage1-backoffice-api.askottentertainment.com'
 
-function createMarket(marketCreateBody){
-    cy.log(marketCreateBody)
+function createMarket(createMarketBody){
+    cy.log(createMarketBody)
     return cy.get('@BOToken').then(BOToken => {
         return cy.request({
             method : 'POST',
@@ -9,7 +9,7 @@ function createMarket(marketCreateBody){
             headers: {
                 authorization: 'Bearer ' + BOToken
             },
-            body: marketCreateBody
+            body: createMarketBody
         }).then((resp)=>{
             expect(resp.status).to.eq(200)
             return resp.body
