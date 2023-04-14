@@ -1,0 +1,20 @@
+{
+  "name": null,
+  "betable_event_id": null,
+  "selections": [
+    {
+      "name": null,
+      "odds": null
+    },
+    {
+      "name": null,
+      "odds": null
+    }
+  ],
+  "is_singles_only": false,
+  "bet_side_type": null,
+  "each_way": false,
+  "each_way_terms": 0.5,
+  "places": 2,
+  "bet_stop_time": null
+}
