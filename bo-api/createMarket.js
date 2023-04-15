@@ -1,7 +1,6 @@
 let env='stage1-backoffice-api.askottentertainment.com'
 
 function createMarket(createMarketBody){
-    cy.log(createMarketBody)
     return cy.get('@BOToken').then(BOToken => {
         return cy.request({
             method : 'POST',
