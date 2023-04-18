@@ -1,5 +1,5 @@
 
-let env='stage1-api.dragonbet.co.uk'
+let env='stage2-api.dragonbet.co.uk'
 function userInfoAPI(){
     return cy.get('@token').then(token => {
         return cy.request(
