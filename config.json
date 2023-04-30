@@ -4,8 +4,7 @@
     "username": "stage.all.wl@fansunite.com",
     "password": "#StageAlWl2022"
   },
-  "othecredential needed": {
-    "username": "dbuser",
-    "password": "dbpswd"
+  "testAccountPassword": {
+    "password": "Password1234#"
   }
 }
