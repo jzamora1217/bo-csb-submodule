@@ -22,7 +22,7 @@ function createUserAPI(timestamp){
         method: 'POST',
         url: 'https://' + env + '/api/v3/user/register',
         body: {
-            "email": `johnny.zamora+${timestamp}@fansunite.com`,
+            "email": `johnny.zamora+qa${timestamp}@fansunite.com`,
             "username": firstName+lastName,
             "phone_number": phoneNumber,
             "phone_number_country_code": "GB",
